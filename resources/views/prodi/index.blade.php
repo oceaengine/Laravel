@@ -30,7 +30,7 @@
                 <h3 class="card-title">Data Program Studi</h3>
 
                 <div class="card-tools">
-                <td><a href="tambahprodi.php" class="btn btn-primary">Tambah</a>
+                <td><a href="/prodi/create" class="btn btn-primary">Tambah</a>
               </div>
 
                   </div>
@@ -50,7 +50,7 @@
                     @foreach ($prodi as $p)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $p->Nama_prodi }}</td>
+                            <td>{{ $p->nama_prodi }}</td>
                             <td><a href="" class="btn btn-warning">Edit</a>
                                 <a href="" class="btn btn-danger">Hapus</a>
                             </td>

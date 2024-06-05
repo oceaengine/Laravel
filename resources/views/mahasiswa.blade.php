@@ -55,12 +55,12 @@
                                         @foreach ($mahasiswa as $m)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $m->NIM }}</td>
-                                                <td>{{ $m->Nama }}</td>
-                                                <td>{{ $m->Id_prodi }}</td>
-                                                <td>{{ $m->Nomor_HP }}</td>
-                                                <td>{{ $m->Alamat }}</td>
-                                                <td><img src="dist/img/{{ $m->Foto }}"  width="100px" height="100px"></td>
+                                                <td>{{ $m->nim }}</td>
+                                                <td>{{ $m->nama }}</td>
+                                                <td>{{ $m->prodi_id }}</td>
+                                                <td>{{ $m->no_hp }}</td>
+                                                <td>{{ $m->alamat }}</td>
+                                                <td><img src="dist/img/{{ $m->foto }}"  width="100px" height="100px"></td>
                                                 <td><a href="" class="btn btn-warning">Edit</a>
                                                     <a href="" class="btn btn-danger">Hapus</a>
                                                 </td>
