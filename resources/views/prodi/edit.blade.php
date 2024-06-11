@@ -2,8 +2,8 @@
 
 @section('content')
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+ <!-- Content Wrapper. Contains page content -->
+ <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
@@ -35,19 +35,14 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{ url('prodi') }}" method="post">
+              <form action="{{ url("prodi/$prodi->id") }}" method="post">
+                @method('put')
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
                     <label for="nama_prodi">Nama Program Studi</label>
-                    <input type="text" name="nama_prodi" class="form-control @error ('nama_prodi') is-invalid @enderror" id="nama_prodi" placeholder="Masukan Nama Program Studi">
-                @error('nama_prodi')
-                  <div class="invalid-feedback">
-                {{ $message }}
-              </div>
-                @enderror
-              </div>
-            </div>
+                    <input type="text" name="nama_prodi" class="form-control" id="nama_prodi" value="{{ $prodi->nama_prodi }}">
+                </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
@@ -73,6 +68,5 @@
     </section>
     <!-- /.content -->
   </div>
-
 
 @endsection

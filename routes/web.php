@@ -12,6 +12,8 @@ Route::get('/', function () {
 
 Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
 
-Route::get('/prodi', [ProdiController::class, 'index']);
-Route::get('/prodi/create', [ProdiController::class, 'create']);
-Route::post('/prodi', [ProdiController::class, 'store']);
+// Route::get('/prodi', [ProdiController::class, 'index']);
+// Route::get('/prodi/create', [ProdiController::class, 'create']);
+// Route::post('/prodi', [ProdiController::class, 'store']);
+
+Route::resource('/prodi', ProdiController::class);
