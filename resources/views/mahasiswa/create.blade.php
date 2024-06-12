@@ -35,6 +35,7 @@
               <!-- /.card-header -->
               <!-- form start -->
               <form action="{{ url('mahasiswa') }}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="card-body">
                   <div class="form-group">
                     <label for="nim">NIM</label>
@@ -49,7 +50,9 @@
                     <label for="prodi_id">Program Studi</label>
                     <select name="prodi_id" id="prodi_id" class="form-control select2bs4" style="width: 100%;">
                     <option value="">Pilih Program Studi</option> ;
-                      ?>
+                      @foreach ($prodi as $d)
+                    <option value="{{ $d['id'] }}">{{ $d['nama_prodi'] }}</option>
+                      @endforeach
                     </select>
                   </div>
                   <div class="form-group">
