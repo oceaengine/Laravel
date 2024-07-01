@@ -11,7 +11,7 @@ namespace App\Http\Controllers;
     {
         public function index()
     {
-        $data = ['Nama' => "Dinda", 'Foto' => "E020322092.jpg" ];
+        $data = ['nama' => "Dinda", 'foto' => "E020322092.jpg" ];
         $prodi = Prodi::all();
         return view('prodi.index', compact('data', 'prodi'));
     //Logika untuk menampilkan daftar data
@@ -19,7 +19,7 @@ namespace App\Http\Controllers;
 
     public function create()
     {
-        $data = ['Nama' => "Dinda", 'Foto' => "E020322092.jpg" ];
+        $data = ['nama' => "Dinda", 'foto' => "E020322092.jpg" ];
         return view('prodi.create', compact(['data']));
     }
 
@@ -41,7 +41,7 @@ namespace App\Http\Controllers;
     }
     public function edit(String $id)
     {
-        $data = ['Nama' => "Dinda", 'Foto' => "E020322092.jpg" ];
+        $data = ['nama' => "Dinda", 'foto' => "E020322092.jpg" ];
         $prodi = Prodi::find($id);
         return view('prodi.edit', compact(['data', 'prodi']));
     }
@@ -59,11 +59,13 @@ namespace App\Http\Controllers;
             
         );
         Prodi::where('id', $id)->update($validateData);
+        flash()->success('Data Berhasil diedit');
         return redirect('/prodi');
     }
     public function destroy(String $id)
     {
         Prodi::destroy($id);
+        flash()->success('Data Berhasil dihapus');
         return redirect('/prodi');
     }
 }

@@ -47,9 +47,12 @@
     <ul class="navbar-nav ml-auto">
 
       <li class="nav-item">
-        <a class="nav-link" href="Logout.php">
+        <form action="/logout" method="post">
+          @csrf
+          <button type="submit" class="btn btn-link">
          Logout <i class="fas fa-sign-out-alt"></i>
-        </a>
+          </button>
+        </form>
       </li>
     </ul>
   </nav>

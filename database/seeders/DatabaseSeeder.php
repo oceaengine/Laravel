@@ -31,7 +31,6 @@ class DatabaseSeeder extends Seeder
             'no_hp'=> '0831312906666',
             'alamat'=> 'Banjarmasin',
             'foto'=> 'Dinda.jpg',
-            'password' => '123',
             'prodi_id' => '1',
         ]);
 
@@ -41,11 +40,27 @@ class DatabaseSeeder extends Seeder
             'no_hp'=> '081234567890',
             'alamat'=> 'Banjarbaru',
             'foto'=> 'Askara.jpg',
-            'password' => '123',
             'prodi_id' => '2',
         ]);  
-        
-        Mahasiswa::factory(1)->create();
+        Mahasiswa::factory(10)->create();
+
+        User::create([
+            'user' => 'E020322092',
+            'password' => bcrypt('E020322092'),
+            'role' => 'mahasiswa'
+        ]);
+
+        User::create([
+            'user' => 'E020322115',
+            'password' => bcrypt('E020322115'),
+            'role' => 'mahasiswa'
+        ]);
+
+        User::create([
+            'user' => 'admin',
+            'password' => bcrypt('admin'),
+            'role' => 'admin'
+        ]);
 
     }
 }

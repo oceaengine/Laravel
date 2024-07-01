@@ -28,11 +28,11 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Data Program Studi</h3>
-
-                <div class="card-tools">
+@can('admin')
+  <div class="card-tools">
                 <td><a href="/prodi/create" class="btn btn-primary">Tambah</a>
               </div>
-
+@endcan   
                   </div>
                 </div>
               </div>
@@ -43,7 +43,9 @@
                     <tr>
                       <th>NO</th>
                       <th>Nama Program Studi</th>
-                      <th>Aksi</th>
+                      @can('admin')
+                        <th>Aksi</th>
+                      @endcan
                     </tr>
                   </thead>
                   <tbody>
@@ -51,16 +53,18 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $p->nama_prodi }}</td>
-                            <td><a href="{{ url("prodi/$p->id/edit") }}" class="btn btn-warning">Edit</a>
+                            @can('admin')
+                              <td><a href="{{ url("prodi/$p->id/edit") }}" class="btn btn-warning">Edit</a>
                                 <form action="{{ url("prodi/$p->id") }}" method="post"
                                   class="d-inline">
                                   @method('delete')
                                   @csrf
                                 <button class="btn btn-danger" onclick="return confirm('Yakin ingin dihapus?')">Hapus</button>
-                               </form>
-                           @endforeach 
+                               </form>                        
                           </td>
-                        </tr>
+                            @endcan
+                        </tr> 
+                        @endforeach 
                 </tbody>
                 </table>
               </div>
