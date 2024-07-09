@@ -19,7 +19,6 @@ class Mahasiswa extends Model
     'nama',
     'no_hp',
     'alamat',
-    'password',
     'foto',
     'prodi_id'
     ];
