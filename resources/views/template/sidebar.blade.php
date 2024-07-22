@@ -4,7 +4,7 @@
     <a href="index3.html" class="brand-link">
         <img src="{{ asset('dist/img/poliban.png/')}}" alt="Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
-        <span class="brand-text font-weight-light">Politeknik Negeri Banjarmasin</span>
+        <span class="brand-text font-weight-light">Marine Pharmacy</span>
     </a>
 
     <!-- Sidebar -->
@@ -36,21 +36,26 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('mahasiswa') }}" class="nav-link">
+                    <a href="{{ url('obats') }}" class="nav-link">
                         <i class="nav-icon far fa-calendar-alt"></i>
                         <p>
-                            Data Mahasiswa
+                            Data Obat
                             <span class="badge badge-info right"></span>
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('prodi') }}" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Data Program Studi
+                    <a href="{{ url('karyawans') }}" class="nav-link">
+                        <i class="nav-icon far fa-user"></i>
+                            Data Karyawan
                         </p>
                     </a>
+                    <li class="nav-item">
+                        <a href="{{ url('kategoris') }}" class="nav-link">
+                            <i class="nav-icon far fa-user"></i>
+                                Data Kategori
+                            </p>
+                        </a>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

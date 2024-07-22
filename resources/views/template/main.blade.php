@@ -29,19 +29,23 @@
 <body class="hold-transition sidebar-mini layout-fixed">/
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="z-index: 0">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="mahasiswa" class="nav-link">Data Mahasiswa</a>
+        <a href="obats" class="nav-link">Data Obat</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="prodi" class="nav-link">Data Program Studi</a>
+        <a href="karyawans" class="nav-link">Data Karyawan</a>
       </li>
     </ul>
+    <li class="nav-item d-none d-sm-inline-block">
+      <a href="kategoris" class="nav-link">Data Kategori</a>
+    </li>
+  </ul>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">

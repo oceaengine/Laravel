@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Data Program Studi</h1>
+            <h1 class="m-0">Data Kategori</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -27,10 +27,10 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Data Program Studi</h3>
+                <h3 class="card-title">Data Kategori</h3>
 @can('admin')
   <div class="card-tools">
-                <td><a href="/prodi/create" class="btn btn-primary">Tambah</a>
+                <td><a href="/kategoris/create" class="btn btn-primary">Tambah</a>
               </div>
 @endcan   
                   </div>
@@ -42,20 +42,20 @@
                   <thead>
                     <tr>
                       <th>NO</th>
-                      <th>Nama Program Studi</th>
+                      <th>Jenis Kategori</th>
                       @can('admin')
                         <th>Aksi</th>
                       @endcan
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($prodi as $p)
+                    @foreach ($kategoris as $k)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $p->nama_prodi }}</td>
+                            <td>{{ $k->nama_kategori }}</td>
                             @can('admin')
-                              <td><a href="{{ url("prodi/$p->id/edit") }}" class="btn btn-warning">Edit</a>
-                                <form action="{{ url("prodi/$p->id") }}" method="post"
+                              <td><a href="{{ url("kategoris/$k->id/edit") }}" class="btn btn-warning">Edit</a>
+                                <form action="{{ url("kategoris/$k->id") }}" method="post"
                                   class="d-inline">
                                   @method('delete')
                                   @csrf

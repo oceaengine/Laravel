@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Data Mahasiswa</h1>
+            <h1 class="m-0">Data Obat</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item active">Data Mahasiswa</li>
+              <li class="breadcrumb-item active">Data Obat</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -30,50 +30,39 @@
             <!-- jquery validation -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Edit Mahasiswa</h3>
+                <h3 class="card-title">Edit Obat</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{ url("mahasiswa/$mahasiswa->nim") }}" method="post" enctype="multipart/form-data">
+              <form action="{{ url("obats/$obats->id_obat") }}" method="post" enctype="multipart/form-data">
                 @method('put')
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="nim">NIM</label>
-                    <input type="text" name="nim" class="form-control" id="nim" placeholder="Masukkan nim" value="{{ $mahasiswa->nim }}" readonly>
+                    <label for="id_obat">ID</label>
+                    <input type="text" name="id_obat" class="form-control" id="id_obat" placeholder="Masukkan ID Obat" value="{{ $obats->id_obat }}" readonly>
                   </div>
                   <div class="form-group">
-                    <label for="nama">Nama Mahasiswa</label>
-                    <input type="text" name="nama" class="form-control" id="nama" placeholder="Masukkan Nama Mahasiswa" value="{{ $mahasiswa->nama }}">
+                    <label for="nama_obat">Nama Obat</label>
+                    <input type="text" name="nama_obat" class="form-control" id="nama_obat" placeholder="Masukkan Nama Obat" value="{{ $obats->nama_obat }}">
                   </div>
                   <div class="form-group">
-                    <label for="prodi_id">Program Studi</label>
-                    <select name="prodi_id" id="prodi_id" class="form-control select2bs4" style="width: 100%;">
-                    <option value="">Pilih Program Studi</option> ;
-                      @foreach ($prodi as $d)
-                    <option value="{{ $d['id'] }}" {{ $d['id'] == $mahasiswa->prodi_id ? 'SELECTED' : '' }}>{{ $d['nama_prodi'] }}</option> ;
+                    <label for="id_kategori">Jenis Kategori</label>
+                    <select name="id_kategori" id="id_kategori" class="form-control select2bs4 @error ('id_kategori') is-invalid @enderror" style="width: 100%;">
+                    <option value="">Pilih Jenis Kategori</option> ;
+                      @foreach ($kategoris as $k)
+                    <option value="{{ $k['id'] }}" {{ $k->id == old('id_kategori') ? 'SELECTED' : '' }}>{{ $k['nama_kategori'] }}</option>
                       @endforeach
-                    </select>
+                    </select> @error ('id_kategori')<div class="invalid-feedback"> {{ $message }} </div> @enderror
                   </div>
                   <div class="form-group">
-                    <label for="no_hp">Nomor HP</label>
-                    <input type="text" name="no_hp" class="form-control" id="no_hp" placeholder="Masukkan Nomor HP"  value="{{ $mahasiswa->no_hp }}">
+                    <label for="harga">Harga</label>
+                    <input type="text" name="harga" class="form-control" id="harga" placeholder="Masukkan Harga"  value="{{ $obats->harga }}">
                   </div>
                   <div class="form-group">
-                    <label for="alamat">Alamat</label>
-                    <input type="text" name="alamat" class="form-control" id="alamat" placeholder="Masukkan alamat"  value="{{ $mahasiswa->alamat }}">
+                    <label for="quantity">Quantity</label>
+                    <input type="text" name="quantity" class="form-control" id="quantity" placeholder="Masukkan quantity"  value="{{ $obats->quantity }}">
                   </div>
-                  <div class="form-group">
-                    <label for="foto">Foto</label><br>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="foto" name="foto">
-                        <label class="custom-file-label" for="foto">Pilih foto</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
-                      </div>
-                    </div>
               <!-- /.card-body -->
               <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Submit</button>

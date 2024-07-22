@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Data Mahasiswa</h1>
+                        <h1 class="m-0">Data Obat</h1>
                       </div><!-- /.col -->
                       <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -28,12 +28,12 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Data Mahasiswa</h3>
+                                <h3 class="card-title">Data Obat</h3>
 
                                 <div class="card-tools">
                                     <div class="card-tools">
                                         @can('admin')
-                                            <a href="/mahasiswa/create" class="btn btn-primary">Tambah</a>
+                                            <a href="/obats/create" class="btn btn-primary">Tambah</a>
                                         @endcan
                                     </div>
                                 </div>
@@ -44,30 +44,28 @@
                                     <thead>
                                         <tr>
                                           <th>NO</th>
-                                          <th>NIM</th>
+                                          <th>ID</th>
                                           <th>Nama</th>
-                                          <th>Program Studi</th>
-                                          <th>Nomor HP</th>
-                                          <th>Alamat</th>
-                                          <th>Foto</th>
+                                          <th>Kategori</th>
+                                          <th>Harga</th>
+                                          <th>Quantity</th>
                                           @can('admin')
                                               <th>Aksi</th>
                                           @endcan
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($mahasiswa as $m)
+                                        @foreach ($obats as $o)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $m->nim }}</td>
-                                                <td>{{ $m->nama }}</td>
-                                                <td>{{ $m->prodi->nama_prodi }}</td>
-                                                <td>{{ $m->no_hp }}</td>
-                                                <td>{{ $m->alamat }}</td>
-                                                <td><img src="{{ asset('storage/' . $m->foto) }}"  width="100px" height="100px"></td>
+                                                <td>{{ $o->id_obat }}</td>
+                                                <td>{{ $o->nama_obat }}</td>
+                                                <td>{{ $o->kategoris->nama_kategori }}</td>
+                                                <td>{{ $o->harga }}</td>
+                                                <td>{{ $o->quantity }}</td>
                                                 @can('admin')
-                                                    <td><a href="{{ url("mahasiswa/$m->nim/edit") }}" class="btn btn-warning">Edit</a>
-                                                    <form action="{{ url("mahasiswa/$m->nim") }}" method="post" class="d-inline">
+                                                    <td><a href="{{ url("obats/$o->id_obat/edit") }}" class="btn btn-warning">Edit</a>
+                                                    <form action="{{ url("obats/$o->id_obat") }}" method="post" class="d-inline">
                                                     @method('delete')
                                                     @csrf
                                                     <button class="btn btn-danger" onclick="return confrm('Yakin ingin dihapus?')">Hapus</button>

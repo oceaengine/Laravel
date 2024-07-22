@@ -6,25 +6,24 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Mahasiswa extends Model
+class Obat extends Model
 {
     use HasFactory;
 
-    protected $table = 'mahasiswa';
-    protected $primaryKey = 'nim';
+    protected $table = 'obats';
+    protected $primaryKey = 'id_obat';
     protected $keyType = 'string';
 
     protected $fillable = [
-    'nim',
-    'nama',
-    'no_hp',
-    'alamat',
-    'foto',
-    'prodi_id'
+    'id_obat',
+    'nama_obat',
+    'harga',
+    'quantity',
+    'id_kategori'
     ];
 
-    public function prodi(): BelongsTo
+    public function kategoris(): BelongsTo
     {
-        return $this->belongsTo(Prodi::class);
+        return $this->belongsTo(Kategori::class, 'id_kategori', 'id');
     }
 }
