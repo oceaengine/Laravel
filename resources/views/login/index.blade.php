@@ -20,7 +20,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="#"><b>SIMPADU</b></a>
+            <a href="#"><b>Marine Pharmacy</b></a>
         </div>
         @if (@session()->has('LoginError'))
         <div class="alert alert-danger" role="alert">

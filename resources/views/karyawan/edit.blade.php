@@ -43,6 +43,14 @@
                     <label for="nama_pengguna">Nama Karyawan</label>
                     <input type="text" name="nama_pengguna" class="form-control" id="nama_pengguna" value="{{ $karyawans->nama_pengguna }}">
                 </div>
+                <div class="form-group">
+                  <label for="id_role">Role</label>
+                  <select name="id_role" id="id_role" class="form-control select2bs4 @error ('id_role') is-invalid @enderror" style="width: 100%;">
+                  <option value="">Pilih Role</option> ;
+                    <option selected="selected" data-select2-id="1">Admin</option>
+                    <option data-select2-id="2">Apoteker</option>
+                    </select>
+              </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>

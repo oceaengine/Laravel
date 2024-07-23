@@ -17,7 +17,8 @@ class KaryawanFactory extends Factory
     public function definition(): array
     {
         return [
-            'nama_pengguna' => fake()->sentence(mt_rand(2,3))
+            'nama_pengguna' => fake()->sentence(mt_rand(2,3)),
+            'id_role' => fake()->sentence(mt_rand(2,3))
         ];
     }
 }

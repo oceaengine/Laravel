@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('karyawans', function (Blueprint $table) {
             $table->id();
             $table->string('nama_pengguna');
+            $table->string('id_role');
             $table->timestamps();
         });
     }

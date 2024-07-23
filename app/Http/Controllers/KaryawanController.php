@@ -25,12 +25,14 @@ class KaryawanController extends Controller
     {
         $validateData = $request->validate(
             [
-                'nama_pengguna' => 'required|max:255'
+                'nama_pengguna' => 'required|max:255',
+                'id_role' => 'required|max:255'
             ],
             [
                 'nama_pengguna.required' => 'Nama Karyawan harus diisi',
                 'nama_pengguna.unique' => 'Nama Karyawan sudah ada',
-                'nama_pengguna.max' => 'Nama Karyawan maksimal 255 karakter'
+                'nama_pengguna.max' => 'Nama Karyawan maksimal 255 karakter',
+                'id_role.required' => 'Nama Karyawan harus diisi'
             ]
             
         );
@@ -47,12 +49,15 @@ class KaryawanController extends Controller
     {
         $validateData = $request->validate(
             [
-                'nama_pengguna' => 'required|max:255'
+                'nama_pengguna' => 'required|max:255',
+                'id_role' => 'required|max:255'
+                
             ],
             [
                 'nama_pengguna.required' => 'Nama Karyawan harus diisi',
                 'nama_pengguna.unique' => 'Nama Karyawan sudah ada',
-                'nama_pengguna.max' => 'Nama Karyawan maksimal 255 karakter'
+                'nama_pengguna.max' => 'Nama Karyawan maksimal 255 karakter',
+                'id_role.required' => 'Nama Karyawan harus diisi'
             ]
             
         );

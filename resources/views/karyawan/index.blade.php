@@ -43,6 +43,7 @@
                     <tr>
                       <th>NO</th>
                       <th>Nama Karyawan</th>
+                      <th>Role</th>
                       @can('admin')
                         <th>Aksi</th>
                       @endcan
@@ -53,6 +54,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $p->nama_pengguna }}</td>
+                            <td>{{ $p->id_role }}</td>
                             @can('admin')
                               <td><a href="{{ url("karyawans/$p->id/edit") }}" class="btn btn-warning">Edit</a>
                                 <form action="{{ url("karyawans/$p->id") }}" method="post"

@@ -40,13 +40,16 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="nama_pengguna">Nama Karyawan</label>
-                    <input type="text" name="nama_pengguna" class="form-control @error ('nama_pengguna') is-invalid @enderror" id="nama_pengguna" placeholder="Masukan Nama Karyawan">
-                @error('nama_pengguna')
-                  <div class="invalid-feedback">
-                {{ $message }}
+                    <input type="text" name="nama_pengguna" class="form-control @error ('nama_pengguna') is-invalid @enderror" id="nama_pengguna" 
+                    placeholder="Masukan Nama Karyawan"> @error('nama_pengguna') <div class="invalid-feedback">{{ $message }} </div> @enderror
               </div>
-                @enderror
-              </div>
+              <div class="form-group">
+                <label for="id_role">Role</label>
+                <select name="id_role" id="id_role" class="form-control select2bs4 @error ('id_role') is-invalid @enderror" style="width: 100%;">
+                <option value="">Pilih Role</option> ;
+                  <option selected="selected" data-select2-id="1">Admin</option>
+                  <option data-select2-id="2">Apoteker</option>
+                  </select>
             </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
